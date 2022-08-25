@@ -1,0 +1,38 @@
+{
+    "name" : "seffeng/url-helper",
+    "description" : "PHP extension url helper",
+    "keywords" : [
+        "PHP",
+        "laravel",
+        "lumen",
+        "seffeng",
+        "url",
+        "helpers"
+    ],
+    "license" : "MIT",
+    "homepage" : "https://github.com/seffeng/php-url-helper",
+    "authors" : [{
+            "name" : "seffeng",
+            "email" : "save.zxf@gmail.com",
+            "homepage" : "https://github.com/seffeng"
+        }
+    ],
+    "require" : {
+        "php" : ">=7.1",
+        "seffeng/arr-helper" : ">=0.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": ">=6.0"
+    },
+    "autoload" : {
+        "psr-4" : {
+            "Seffeng\\UrlHelper\\" : "src/"
+        }
+    },
+    "autoload-dev" : {
+        "psr-4" : {
+            "Seffeng\\UrlHelper\\Tests\\" : "tests/"
+        }
+    },
+    "minimum-stability" : "stable"
+}
