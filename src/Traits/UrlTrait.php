@@ -60,4 +60,27 @@ Trait UrlTrait
         }
         return false;
     }
+
+    /**
+     * 客户端IP
+     *
+     * @author zxf
+     * @date   2024-07-22
+     * @return string
+     */
+    public static function getUserIp()
+    {
+        $ip = '0.0.0.0';
+        if (isset($_SERVER['HTTP_X_FORWARDED_FOR']) && $_SERVER['HTTP_X_FORWARDED_FOR']) {
+            $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+        } elseif (isset($_SERVER['HTTP_CLIENT_IP']) && $_SERVER['HTTP_CLIENT_IP']) {
+            $ip = $_SERVER['HTTP_CLIENT_IP'];
+        } elseif (isset($_SERVER['REMOTE_ADDR']) && $_SERVER['REMOTE_ADDR']) {
+            $ip = $_SERVER['REMOTE_ADDR'];
+        } elseif ($ip = getenv('HTTP_X_FORWARDED_FOR')) {
+        } elseif ($ip = getenv('HTTP_CLIENT_IP')) {
+        } elseif ($ip = getenv('REMOTE_ADDR')) {
+        }
+        return $ip;
+    }
 }
